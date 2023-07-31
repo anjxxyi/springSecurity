@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
   jpa:
     show-sql: true
@@ -6,8 +9,12 @@ spring:
         format_sql: true
     defer-datasource-initialization: true
   datasource:
-    url: jdbc:h2:mem:testdb
-    username: sa
+    #    url: jdbc:mariadb://ec2-43-200-178-116.ap-northeast-2.compute.amazonaws.com/mydb  # mariadb:aws-ec2
+    #    url: jdbc:mariadb://thejoeun1.iptime.org:3310/mydb                                # mariadb
+    url: jdbc:mariadb://localhost:3306/mydb                                           # mariadb
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: 1234
   h2:
     console:
       enabled: true
